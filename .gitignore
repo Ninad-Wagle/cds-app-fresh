@@ -1,0 +1,21 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build outputs
+bin/
+obj/
+
+# Rider
+.idea/
+
+# Dotnet publish
+publish/
+
+# NuGet
+*.nupkg
+
+# OS files
+Thumbs.db
+.DS_Store
