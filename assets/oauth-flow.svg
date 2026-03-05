@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300">
+  <style>.box{fill:#f0fff4;stroke:#2f855a;stroke-width:2}.text{font-family:Arial;font-size:12px;fill:#064e3b}.title{font-weight:700;font-size:13px}</style>
+  <rect class="box" x="40" y="30" width="160" height="60" rx="6"/>
+  <text class="text title" x="120" y="60" text-anchor="middle">Backend API</text>
+
+  <rect class="box" x="300" y="30" width="220" height="60" rx="6"/>
+  <text class="text title" x="410" y="60" text-anchor="middle">Key Vault / Config</text>
+
+  <rect class="box" x="640" y="30" width="220" height="60" rx="6"/>
+  <text class="text title" x="750" y="60" text-anchor="middle">HMRC CDS OAuth</text>
+
+  <line x1="200" y1="60" x2="300" y2="60" stroke="#2f855a" stroke-width="2" marker-end="url(#arr)"/>
+  <text class="text" x="245" y="48" text-anchor="middle">read client_secret</text>
+
+  <line x1="520" y1="60" x2="640" y2="60" stroke="#2f855a" stroke-width="2" marker-end="url(#arr)"/>
+  <text class="text" x="580" y="48" text-anchor="middle">POST /oauth/token (client_credentials)</text>
+
+  <circle cx="720" cy="150" r="6" fill="#2f855a" />
+  <text class="text" x="740" y="150">Access token (short-lived)</text>
+
+  <line x1="720" y1="66" x2="720" y2="144" stroke="#2f855a" stroke-width="2" marker-end="url(#arr)"/>
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2f855a" />
+    </marker>
+  </defs>
+
+  <text class="text" x="40" y="270">OAuth flow: API retrieves secret from Key Vault, calls HMRC token endpoint, uses token to call CDS APIs.</text>
+</svg>

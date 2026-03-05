@@ -1,0 +1,6 @@
+@MlService_HostAddress = http://localhost:5260
+
+GET {{MlService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

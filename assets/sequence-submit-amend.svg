@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="280" viewBox="0 0 900 280">
+  <style>.box{fill:#ffffff;stroke:#334155;stroke-width:1.5}.actor{font-family:Arial;font-size:12px;fill:#0f172a;font-weight:700}.label{font-family:Arial;font-size:11px;fill:#0f172a}.line{stroke:#334155;stroke-width:1.2;marker-end:url(#arr)}</style>
+
+  <rect class="box" x="40" y="20" width="160" height="40" rx="6"/>
+  <text class="actor" x="120" y="45" text-anchor="middle">User (UI)</text>
+
+  <rect class="box" x="320" y="20" width="200" height="40" rx="6"/>
+  <text class="actor" x="420" y="45" text-anchor="middle">Blazor Frontend</text>
+
+  <rect class="box" x="620" y="20" width="200" height="40" rx="6"/>
+  <text class="actor" x="720" y="45" text-anchor="middle">.NET API</text>
+
+  <rect class="box" x="320" y="120" width="200" height="40" rx="6"/>
+  <text class="actor" x="420" y="145" text-anchor="middle">Azure Functions / Worker</text>
+
+  <rect class="box" x="620" y="120" width="200" height="40" rx="6"/>
+  <text class="actor" x="720" y="145" text-anchor="middle">HMRC CDS API</text>
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#334155" />
+    </marker>
+  </defs>
+
+  <line class="line" x1="200" y1="40" x2="320" y2="40" />
+  <text class="label" x="260" y="32" text-anchor="middle">Open form / Edit</text>
+
+  <line class="line" x1="520" y1="40" x2="620" y2="40" />
+  <text class="label" x="570" y="32" text-anchor="middle">POST /api/declarations (save draft)</text>
+
+  <line class="line" x1="720" y1="60" x2="720" y2="120" />
+  <text class="label" x="740" y="90">On submit: obtain token, POST CDS</text>
+
+  <line class="line" x1="720" y1="160" x2="720" y2="200" />
+  <text class="label" x="740" y="180">Store correlationId; enqueue status poll</text>
+
+  <line class="line" x1="520" y1="140" x2="620" y2="140" />
+  <text class="label" x="570" y="132" text-anchor="middle">Worker polls HMRC status</text>
+
+  <text class="label" x="60" y="240">Submit flow (top) and Amend flow: similar but with PATCH/PUT to HMRC and audit entries</text>
+</svg>

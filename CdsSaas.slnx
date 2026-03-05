@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="src/api/Api.csproj" />
+  <Project Path="src/frontend/Frontend.csproj" />
+  <Project Path="src/ml/MlService.csproj" />
+</Solution>

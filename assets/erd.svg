@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <style>.box{fill:#fffaf0;stroke:#9c6b00;stroke-width:2}.title{font-family:Arial;font-size:13px;font-weight:700;fill:#5a3d00}.text{font-family:Arial;font-size:11px;fill:#2f2f2f}</style>
+  <rect class="box" x="40" y="40" width="240" height="120" rx="6"/>
+  <text class="title" x="160" y="65" text-anchor="middle">Company</text>
+  <text class="text" x="60" y="90">CompanyId : guid</text>
+  <text class="text" x="60" y="110">Name : string</text>
+
+  <rect class="box" x="320" y="40" width="240" height="120" rx="6"/>
+  <text class="title" x="440" y="65" text-anchor="middle">User</text>
+  <text class="text" x="340" y="90">UserId : guid</text>
+  <text class="text" x="340" y="110">CompanyId : guid (FK)</text>
+
+  <rect class="box" x="40" y="200" width="360" height="140" rx="6"/>
+  <text class="title" x="220" y="225" text-anchor="middle">Declaration</text>
+  <text class="text" x="60" y="260">DeclarationId : guid</text>
+  <text class="text" x="60" y="280">CompanyId : guid (FK)</text>
+  <text class="text" x="60" y="300">Status : enum</text>
+
+  <rect class="box" x="440" y="200" width="220" height="90" rx="6"/>
+  <text class="title" x="550" y="225" text-anchor="middle">LineItem</text>
+  <text class="text" x="460" y="250">LineItemId : guid</text>
+  <text class="text" x="460" y="270">DeclarationId : guid (FK)</text>
+
+  <rect class="box" x="700" y="200" width="220" height="90" rx="6"/>
+  <text class="title" x="810" y="225" text-anchor="middle">AuditLog</text>
+  <text class="text" x="720" y="250">AuditId : guid</text>
+  <text class="text" x="720" y="270">EntityType, EntityId, Action, Timestamp</text>
+
+  <line x1="200" y1="160" x2="200" y2="200" stroke="#9c6b00" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="440" y1="160" x2="440" y2="200" stroke="#9c6b00" stroke-width="2" marker-end="url(#a)"/>
+
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9c6b00" />
+    </marker>
+  </defs>
+
+  <text class="text" x="40" y="380">ERD: Company → Users, Company → Declarations, Declaration → LineItems, AuditLog records</text>
+</svg>
