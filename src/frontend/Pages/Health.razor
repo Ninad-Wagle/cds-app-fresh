@@ -1,0 +1,48 @@
+@page "/health"
+@using System.Net.Http.Json
+@inject HttpClient Http
+
+<h3>API Health</h3>
+
+@if (error is not null)
+{
+    <div class="error">Error: @error</div>
+}
+else if (health is null)
+{
+    <div>Loading...</div>
+}
+else
+{
+    <dl>
+        <dt>Status</dt>
+        <dd>@health.Status</dd>
+        <dt>Timestamp (UTC)</dt>
+        <dd>@health.Timestamp</dd>
+        <dt>Service</dt>
+        <dd>@health.Service</dd>
+        <dt>Version</dt>
+        <dd>@health.Version</dd>
+    </dl>
+}
+
+@code {
+    HealthModel? health;
+    string? error;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            // Call the API health endpoint. Adjust host/port if needed in production.
+            var resp = await Http.GetFromJsonAsync<HealthModel>("http://localhost:5010/health");
+            health = resp;
+        }
+        catch (Exception ex)
+        {
+            error = ex.Message;
+        }
+    }
+
+    public record HealthModel(string Status, DateTime Timestamp, string Service, string Version);
+}
